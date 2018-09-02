@@ -28,8 +28,10 @@
     <h1><%= title %></h1>
     <div class="month">
       <ul>
+	<span style="vertical-align:middle">
 	<li class="prev"><a href="/?year=<%= lastMonth.getFullYear() %>&month=<%= lastMonth.getMonth() + 1 %>" title="Newer" rel="nofollow">&#10094;</a></li>
 	<li class="next"><a href="/?year=<%= nextMonth.getFullYear() %>&month=<%= nextMonth.getMonth() + 1 %>" title="Older" rel="nofollow">&#10095;</a></li>
+	</span>
 	<li> <a href="/" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
 	<br>
 	<span style="font-size:13px"><%= year %></span>
