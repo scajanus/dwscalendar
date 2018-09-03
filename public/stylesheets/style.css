@@ -7,7 +7,8 @@ body {
   padding: 30px;
   font-family: Lato, Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #626F8E;
+  color: #25283D;
+  background-color: #07BEB8;
 }
 
 ul { list-style-type: none; }
@@ -43,8 +44,8 @@ h1 {margin: 5px}
 
 /* CALENDAR ITEMS, STYLING */
 .calendar {
-  background-color: white;
-  border: 1px solid #e1e1e1;
+  background-color: #98DFEA;
+  border: 0px solid #e1e1e1;
 }
 .calendar__header > div {
   text-transform: uppercase;
@@ -52,31 +53,43 @@ h1 {margin: 5px}
   font-weight: bold;
 }
 .calendar__day {
-  border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
+  border-right: 0px solid #e1e1e1;
+  border-top: 0px solid #e1e1e1;
 }
 .calendar__day:last-child {
   border-right: 0;
 }
 
-.today {
-  border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
-  background: #FFE5F1;
-}
-
 .tideam {
-  color: #437C90;
+  color: #25283D;
 }
 .tidepm {
-  color: #437C90;
+  color: #25283D;
 }
 .tidefullday {
   font-weight: 500;
-  color: #437C90;
+  color: #25283D;
 }
 .tidenotides {
-  color: #D33E43
+  color: #8F3985
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  #font-size: 50px;
+  color: inherit;
+  line-height: 25px;
+  text-align: center;
+  background: #07BEB8;
+  float: right;
+}
+
+.today {
+  #border-right: 0px solid #e1e1e1;
+  #border-top: 0px solid #e1e1e1;
+  background: #FFE5F1;
 }
 
 .calendar__day:last-child {
@@ -84,13 +97,13 @@ h1 {margin: 5px}
 }
 
 .month {
-    color: white;
+    color: #EFD9CE;
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    background: #626F8E;
+    background: #8F3985;
     padding: 20px 25px;
 }
 
@@ -100,7 +113,7 @@ h1 {margin: 5px}
 }
 
 .month ul li {
-    color: white;
+    #color: white;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
