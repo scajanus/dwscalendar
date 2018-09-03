@@ -6,7 +6,8 @@ main {
 body {
   padding: 30px;
   font-family: Lato, Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 500;
   color: #EFD9CE;
   background-color: #49393B;
 }
@@ -45,7 +46,6 @@ h1 {margin: 5px}
 /* CALENDAR ITEMS, STYLING */
 .calendar {
   background-color: #89A894;
-  border: 0px solid #e1e1e1;
 }
 .calendar__header > div {
   text-transform: uppercase;
@@ -54,37 +54,32 @@ h1 {margin: 5px}
   color: #341C1C;
 }
 .calendar__day {
-  border-right: 0px solid #e1e1e1;
-  border-top: 0px solid #e1e1e1;
-}
-.calendar__day:last-child {
-  border-right: 0;
+  text-align: center;
 }
 
-.tideam {
+.tide {
+  font-size: 14px;
   color: #341C1C;
 }
-.tidepm {
-  color: #341C1C;
-}
-.tidefullday {
-  font-weight: 500;
-  color: #341C1C;
-}
-.tidenotides {
-  color: #49393B
-}
+
+.tide .tideam {}
+
+.tide .tidepm {}
+
+.tide .tidefullday { font-weight: 500; }
+
+.tide .tidenotides { color: #49393B }
 
 .circle {
-  width: 25px;
-  height: 25px;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
-  #font-size: 50px;
   color: inherit;
-  line-height: 25px;
+  font-size: inherit;
+  line-height: 2em;
   text-align: center;
-  background: #4B644A;
-  float: right;
+  background: inherit;
+  display:inline-block
 }
 
 .today {

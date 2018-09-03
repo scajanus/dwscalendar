@@ -36,7 +36,7 @@
 	</span>
 	<li> <a href="/" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
 	<br>
-	<span style="font-size:13px"><%= year %></span>
+	<span style="font-size:13px"><%= year %></span></li>
       </ul>
 
 
@@ -59,16 +59,16 @@
       var d = c.toISOString()
       switch(tides[d]) {
 	case 1:
-	  t = '<span class="tideam">AM</span>'
+	  t = '<span class="tide tideam">AM</span>'
 	  break;
 	case 2:
-	  t = '<span class="tidepm">PM</span>'
+	  t = '<span class="tide tidepm">PM</span>'
 	  break;
 	case 3:
-	  t = '<span class="tidefullday">All day</span>'
+	  t = '<span class="tide tidefullday">All day</span>'
 	  break;
 	case 0:
-	  t = '<span class="tidenotides">No tides</span>'
+	  t = '<span class="tide tidenotides">No tides</span>'
 	  break;
 	default:
 	  t = 'No data'
