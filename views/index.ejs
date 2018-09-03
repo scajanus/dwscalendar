@@ -23,34 +23,34 @@
   firstDay = new Date(year, month-1, 0).getDay();
 %>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/<%- style %>.css' />
   </head>
+
   <body>
     <h1><%= title %></h1>
+
     <div class="month">
-      <ul>
-	<span style="vertical-align:middle">
-	<li class="prev"><a href="/?year=<%= lastMonth.getFullYear() %>&month=<%= lastMonth.getMonth() + 1 %>" title="Newer" rel="nofollow">&#10094;</a></li>
-	<li class="next"><a href="/?year=<%= nextMonth.getFullYear() %>&month=<%= nextMonth.getMonth() + 1 %>" title="Older" rel="nofollow">&#10095;</a></li>
-	</span>
-	<li> <a href="/" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
-	<br>
-	<span style="font-size:13px"><%= year %></span></li>
-      </ul>
+      <div class="prev"><a href="/?year=<%= lastMonth.getFullYear() %>&month=<%= lastMonth.getMonth() + 1 %>" title="Newer" rel="nofollow">&#10094;</a></div>
+        <div>
+          <a href="/" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
+          <br>
+          <span style="font-size:13px"><%= year %></span>
+        </div>
+        <div class="next"><a href="/?year=<%= nextMonth.getFullYear() %>&month=<%= nextMonth.getMonth() + 1 %>" title="Older" rel="nofollow">&#10095;</a></div>
+    </div>
 
-
-  </div>
     <div class="calendar">
       <div class="calendar__header">
-	<div>mon</div>
-	<div>tue</div>
-	<div>wed</div>
-	<div>thu</div>
-	<div>fri</div>
-	<div>sat</div>
-	<div>sun</div>
-  </div>
+        <div>mon</div>
+        <div>tue</div>
+        <div>wed</div>
+        <div>thu</div>
+        <div>fri</div>
+        <div>sat</div>
+        <div>sun</div>
+    </div>
 
   <% for (var row = 0; row < (firstDay+lastDate)/7; row++){ %>
     <div class="calendar__week">
@@ -58,32 +58,32 @@
       var c = new Date(Date.UTC(year,month-1,date))
       var d = c.toISOString()
       switch(tides[d]) {
-	case 1:
-	  t = '<span class="tide tideam">AM</span>'
-	  break;
-	case 2:
-	  t = '<span class="tide tidepm">PM</span>'
-	  break;
-	case 3:
-	  t = '<span class="tide tidefullday">All day</span>'
-	  break;
-	case 0:
-	  t = '<span class="tide tidenotides">No tides</span>'
-	  break;
-	default:
-	  t = 'No data'
+        case 1:
+          t = '<span class="tide tideam">AM</span>'
+          break;
+        case 2:
+          t = '<span class="tide tidepm">PM</span>'
+          break;
+        case 3:
+          t = '<span class="tide tidefullday">All day</span>'
+          break;
+        case 0:
+          t = '<span class="tide tidenotides">No tides</span>'
+          break;
+        default:
+          t = 'No data'
       }
       if (row == 0 && firstDay == col){
-	blank = false;
+        blank = false;
       }
-	if (date > lastDate) {
-	  blank = true;
+        if (date > lastDate) {
+          blank = true;
       }
       calendarDayObject = '<div class="calendar__day">'
-	      + (blank ? '&nbsp;</div>' :
+              + (blank ? '&nbsp;</div>' :
       ('<div class="circle ' +
        (year == today.getFullYear() && month == today.getMonth()+1 && date == today.getDate() ? 'today">' : 'day">') + date++ + '</div>' + '<span style="font-size:25px"><br></span>' + t)
-	      + '</div>')%>
+              + '</div>')%>
       <%- calendarDayObject %>
     <% } /*end of column-wise for*/%> 
     </div>
