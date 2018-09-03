@@ -135,12 +135,12 @@ h1 {margin: 5px}
   text-align: right;
 }
 .calendar__day {
-  border-right: 2px solid #e1e1e1;
-  border-top: 2px solid #e1e1e1;
+  #border-right: 2px solid #e1e1e1;
+  #border-top: 2px solid #e1e1e1;
   font-size: 1.3em;
 }
 .calendar {
-  border: 3px solid #e1e1e1;
+  #border: 3px solid #e1e1e1;
 }
 }
 @media screen and (max-width:1024px) and (orientation:portrait){
@@ -165,13 +165,13 @@ h1 {margin: 5px}
   text-align: right;
 }
 .calendar__day {
-  border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
+  #border-right: 1px solid #e1e1e1;
+  #border-top: 1px solid #e1e1e1;
   font-size: 15px;
   padding: 5px;
 }
 .calendar {
-  border: 1px solid #e1e1e1;
+  #border: 1px solid #e1e1e1;
 }
 }
 
@@ -181,13 +181,13 @@ h1 {margin: 5px}
   text-align: right;
 }
 .calendar__day {
-  border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
+  #border-right: 1px solid #e1e1e1;
+  #border-top: 1px solid #e1e1e1;
   font-size: 13px;
   padding: 3px;
 }
 .calendar {
-  border: 1px solid #e1e1e1;
+  #border: 1px solid #e1e1e1;
 }
 }
 
