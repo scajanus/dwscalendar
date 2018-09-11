@@ -32,13 +32,13 @@
     <h1><%= title %></h1>
 
     <div class="month">
-      <div class="prev"><a href="/?year=<%= lastMonth.getFullYear() %>&month=<%= lastMonth.getMonth() + 1 %>" title="Newer" rel="nofollow">&#10094;</a></div>
+	    <div class="prev"><a href="/?year=<%= lastMonth.getFullYear() %>&month=<%= lastMonth.getMonth() + 1 %>&style=<%=style%>" title="Newer" rel="nofollow">&#10094;</a></div>
         <div>
-          <a href="/" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
+		<a href="/<%= style != 'style' ? '?style='+style : '' %>" title="Today" rel="nofollow"><%= monthNames[month-1] %></a>
           <br>
           <span style="font-size:13px"><%= year %></span>
         </div>
-        <div class="next"><a href="/?year=<%= nextMonth.getFullYear() %>&month=<%= nextMonth.getMonth() + 1 %>" title="Older" rel="nofollow">&#10095;</a></div>
+        <div class="next"><a href="/?year=<%= nextMonth.getFullYear() %>&month=<%= nextMonth.getMonth() + 1 %>&style=<%=style%>" title="Older" rel="nofollow">&#10095;</a></div>
     </div>
 
     <div class="calendar">
