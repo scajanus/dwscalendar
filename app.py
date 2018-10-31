@@ -85,8 +85,7 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
                     )
                 ],
             layout=dict(
-                margin=dict(l=30,r=10,b=30,t=50),
-                title='{}-{:02d}-{:02d}'.format(year, month, date),
+                margin=dict(l=30,r=10,b=30,t=20),
                 xaxis=dict(tickformat='%H:%M',
                     fixedrange=True
                     ),
