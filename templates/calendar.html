@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DWS Calendar</title>
+  </head>
+
+  <body>
+    <h1>DWS Calendar</h1>
+    <div class="month">
+        <div class="prev"><a href="/?year={{year if month>1 else year-1}}&month={{month-1 if month>1 else 12}}&style=style" title="Older" rel="nofollow">&#10094;</a></div>
+    <div>
+        <a href="/" title="Today" rel="nofollow">{{month_name}}</a>
+    <br>
+    <span style="font-size:13px">{{year}}</span>
+    </div>
+    <div class="next"><a href="/?year={{year if month <12 else year+1}}&month={{month+1 if month<12 else 1}}&style=style" title="Newer" rel="nofollow">&#10095;</a></div>
+    </div>
+
+    <div class="calendar">
+      <div class="calendar__header">
+        <div>mon</div>
+        <div>tue</div>
+        <div>wed</div>
+        <div>thu</div>
+        <div>fri</div>
+        <div>sat</div>
+        <div>sun</div>
+      </div>
+      {% for row in cal %}
+      <div class="calendar__week">
+      {% for date, type in row %}
+      <div class="calendar__day">
+        {% if date != 0 %}
+        <a href="/plot?year={{year}}&month={{month}}&date={{date}}">
+          <div class="circle day">{{date if date != 0 else '&nbsp;'|safe}}</div>
+          <br>
+          <span class="tide">{{type|safe}}</span>
+        </a>
+        {% else %}
+          <div class="circle day">&nbsp;</div>
+          <br>
+          <span class="tide">{{type|safe}}</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
