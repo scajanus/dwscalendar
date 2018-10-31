@@ -91,7 +91,8 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
                 plot_bgcolor= 'rgba(245,246,249,1)',),
             config={
                 'displayModeBar': False,
-                'showLink': False
+                'showLink': False,
+                'responsive': True
                 }
             )
 
