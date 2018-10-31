@@ -9,13 +9,13 @@
   <body>
     <h1>DWS Calendar</h1>
     <div class="month">
-    <div class="prev"><a href="/?year=2018&month=9&style=style" title="Newer" rel="nofollow">&#10094;</a></div>
+        <div class="prev"><a href="/?year={{year if month>1 else year-1}}&month={{month-1 if month>1 else 12}}&style=style" title="Older" rel="nofollow">&#10094;</a></div>
     <div>
-    <a href="/" title="Today" rel="nofollow">October</a>
+        <a href="/" title="Today" rel="nofollow">{{month_name}}</a>
     <br>
-    <span style="font-size:13px">2018</span>
+    <span style="font-size:13px">{{year}}</span>
     </div>
-    <div class="next"><a href="/?year=2018&month=11&style=style" title="Older" rel="nofollow">&#10095;</a></div>
+    <div class="next"><a href="/?year={{year if month <12 else year+1}}&month={{month+1 if month<12 else 1}}&style=style" title="Newer" rel="nofollow">&#10095;</a></div>
     </div>
 
     <div class="calendar">
@@ -28,10 +28,22 @@
         <div>sat</div>
         <div>sun</div>
       </div>
-      {% for row in calendar %}
+      {% for row in cal %}
       <div class="calendar__week">
-      {% for date in row %}
-      <div class="calendar__day"><div class="circle day">{{date if date != 0 else ''}}</div><span style="font-size:25px"><br></span><span class="tide tideam">AM</span></div>
+      {% for date, type in row %}
+      <div class="calendar__day">
+        {% if date != 0 %}
+        <a href="/plot?year={{year}}&month={{month}}&date={{date}}">
+          <div class="circle day">{{date if date != 0 else '&nbsp;'|safe}}</div>
+          <br>
+          <span class="tide">{{type|safe}}</span>
+        </a>
+        {% else %}
+          <div class="circle day">&nbsp;</div>
+          <br>
+          <span class="tide">{{type|safe}}</span>
+        {% endif %}
+      </div>
       {% endfor %}
       </div>
       {% endfor %}
