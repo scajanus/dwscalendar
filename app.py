@@ -25,7 +25,7 @@ class DWSCalendar(calendar.Calendar):
         return [ [(day, t[db_days.get(day, 0)]) for day in days[i:i+7]] for i in range(0, len(days), 7) ]
 
 myDWSCalendar = DWSCalendar()
-DATABASE = '../../dwscalendar/tides.db'
+DATABASE = '../tides.db'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -84,11 +84,16 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
                     y=ys
                     )
                 ],
-            layout=dict(title='{}-{:02d}-{:02d}'.format(year, month, date),
+            layout=dict(
+                margin=dict(l=30,r=10,b=30,t=50),
+                title='{}-{:02d}-{:02d}'.format(year, month, date),
                 xaxis=dict(tickformat='%H:%M',
+                    fixedrange=True
                     ),
-                paper_bgcolor= 'rgba(245,246,249,1)',
-                plot_bgcolor= 'rgba(245,246,249,1)',),
+                yaxis=dict(fixedrange=True
+                    ),
+                paper_bgcolor= 'rgba(235,236,239,1)',
+                plot_bgcolor= 'rgba(235,236,239,1)',),
             config={
                 'displayModeBar': False,
                 'showLink': False,
