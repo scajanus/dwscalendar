@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+
+    <h3><div class="prev"><a href="/?year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&#10094; {{date}}</a>
+    </h3></div>
+    <div id="{{date}}"></div>
+
+</body>
+
+
+<footer>
+    <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+
+    <script type="text/javascript">
+
+        var graphs = {{graphJSON | safe}};
+
+        Plotly.plot("{{date}}", // the ID of the div, created above
+                    graphs.data,
+                    graphs.layout,
+                    graphs.config);
+
+    </script>
+</footer>
+
+</html>
