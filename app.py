@@ -1,4 +1,4 @@
-from flask import Flask,render_template,g,request
+from flask import Flask,render_template,g,request,redirect,url_for
 import sqlite3
 import json
 import calendar
@@ -65,6 +65,10 @@ def dwscalendar():
 @app.route('/plot')
 def plot():
     year, month, date = int(request.args.get('year',2018)), int(request.args.get('month',10)), int(request.args.get('date',1))
+    delta = int(request.args.get('delta', 0))
+    if delta != 0:
+        d = datetime(year, month, date) + timedelta(delta)
+        return redirect(url_for('plot', year=d.year, month=d.month, date=d.day))
     d = datetime(year, month, date)
     query = """
 SELECT * FROM tide WHERE date > date(?) AND date < date(?)
@@ -78,7 +82,6 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
     graphs = dict(
             data=[
                 dict(
-                    line= {'shape': 'spline', 'smoothing': 1.3},
                     fill='tozeroy',
                     x=xs,
                     y=ys
