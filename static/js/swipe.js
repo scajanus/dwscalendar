@@ -15,11 +15,11 @@
       var end = event.changedTouches.item(0).clientX;
 
       if(end > start + offset){
-          document.location.href = window.location.href + '&delta=1';
+          document.location.href = window.location.href + '&delta=-1';
        //a left -> right swipe
       }
       if(end < start - offset ){
-          document.location.href = window.location.href + '&delta=-1';
+          document.location.href = window.location.href + '&delta=1';
        //a right -> left swipe
       }
     }
