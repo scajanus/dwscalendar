@@ -53,7 +53,19 @@ def hello(name=None):
 
 @app.route('/')
 def dwscalendar():
-    year, month, date = int(request.args.get('year',2018)), int(request.args.get('month',10)), int(request.args.get('date',1))
+    today = datetime.now()
+    year, month, date = int(request.args.get('year',today.year)), int(request.args.get('month',today.month)), int(request.args.get('date',today.day))
+    delta = int(request.args.get('delta', 0))
+    if delta == -1:
+        year=year if month>1 else year-1
+        month=month-1 if month>1 else 12
+        d = datetime(year, month, date)
+        return redirect(url_for('dwscalendar', year=d.year, month=d.month, date=d.day))
+    elif delta == 1:
+        year=year if month<12 else year+1
+        month=month+1 if month<12 else 1
+        d = datetime(year, month, date)
+        return redirect(url_for('dwscalendar', year=d.year, month=d.month, date=d.day))
     cal = myDWSCalendar.dwsdayscalendar(year, month)
     return render_template('calendar.html',
             cal=cal,

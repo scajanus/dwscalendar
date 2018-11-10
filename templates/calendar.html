@@ -3,19 +3,20 @@
   <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
     <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DWS Calendar</title>
   </head>
-  <body class="Site">
+  <body class="Site noSelect">
     {% include 'header.html' %}
     <main class="Site-content">
       <div class="month">
-        <div class="prev"><a href="/?year={{year if month>1 else year-1}}&month={{month-1 if month>1 else 12}}&style=style" title="Older" rel="nofollow">&larr;</a></div>
+        <div class="prev"><a href="/?delta=-1&year={{year}}&month={{month}}&style=style" title="Older" rel="nofollow">&larr;</a></div>
         <div>
         <div> <a href="/" title="Today" rel="nofollow">{{month_name}}</a> </div>
         <div> <span style="font-size:13px">{{year}}</span> </div>
         </div>
-        <div class="next"><a href="/?year={{year if month <12 else year+1}}&month={{month+1 if month<12 else 1}}&style=style" title="Newer" rel="nofollow">&rarr;</a></div>
+        <div class="next"><a href="/?delta=1&year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&rarr;</a></div>
       </div>
 
       <div class="calendar">
