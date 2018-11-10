@@ -90,12 +90,15 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
             layout=dict(
                 margin=dict(l=30,r=10,b=30,t=20),
                 xaxis=dict(tickformat='%H:%M',
-                    fixedrange=True
+                    fixedrange=True,
+                    gridcolor='#644536',
+                    gridwidth=1,
                     ),
-                yaxis=dict(fixedrange=True
+                yaxis=dict(fixedrange=True,
+                    gridcolor='#644536'
                     ),
-                paper_bgcolor= 'rgba(235,236,239,1)',
-                plot_bgcolor= 'rgba(235,236,239,1)',),
+                paper_bgcolor= 'rgba(235,236,239,0)',
+                plot_bgcolor= 'rgba(235,236,239,0)',),
             config={
                 'displayModeBar': False,
                 'showLink': False,

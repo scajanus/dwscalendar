@@ -3,16 +3,19 @@
 
 <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
 </head>
 
-<body>
-
-    <h3><div class="prev"><a href="/?year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&#10094; {{date}}</a>
-    </h3></div>
+<body class="Site">
+  {% include 'header.html' %}
+  <main class="Site-content">
+    <br><a href="/?year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&larr; {{date}}</a>
+      <br>
     <div id="{{date}}"></div>
-
+  </main>
+  {% include 'footer.html' %}
 </body>
 
 

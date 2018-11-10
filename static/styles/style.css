@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 main {
   margin-top: 60px;
@@ -9,7 +9,7 @@ main {
   flex-direction:column;
 }
 header {
-  font-family: ITC Grouch;
+  font-family: 'Playfair Display', serif;
 }
 body {
   font-family: Courier, Lato, Helvetica, Arial, sans-serif;
@@ -109,7 +109,7 @@ h1 {margin: 5px}
   transition: background-color 0.9s ease;
 }
 .circle:hover {
-  background-color: #E54B4B;
+  background-color: #C6A35B;
 }
 
 .today {
@@ -137,8 +137,8 @@ grid-auto-rows: 5vh;
 .calendar {
   font-size: 1.3em;
 }
-.month .prev { font-size: 4vh }
-.month .next { font-size: 4vh }
+.month .prev { font-size: 24px }
+.month .next { font-size: 24px }
 }
 @media screen and (max-width:1024px) and (orientation:landscape){
 .calendar__week {
@@ -199,4 +199,7 @@ font-size:20px}
   font-size: 12px;
   flex-direction: column;
   margin: 5px;
+}
+.instructions {
+  font-size: 12px;
 }
