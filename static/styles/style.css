@@ -21,7 +21,7 @@ main {
   flex-direction:column;
 }
 header {
-  font-family: 'Playfair Display', serif;
+  font-family: ITC Grouch, 'Playfair Display', serif;
 }
 body {
   font-family: Courier, Lato, Helvetica, Arial, sans-serif;
@@ -167,7 +167,7 @@ grid-auto-rows: 10vh;
 }
 @media screen and (max-width:768px) {
 .calendar__week {
-  grid-auto-rows: 100px;
+  grid-auto-rows: 90px;
   text-align: right;
 }
 .calendar__day {
@@ -201,6 +201,15 @@ font-size:20px}
 }
 .luxbar-item {
   color: #EEEFD2;
+}
+.luxbar-hamburger span {
+background-color: #EEEFD2 !important;
+}
+.luxbar-hamburger span::before {
+background-color: #EEEFD2 !important;
+}
+.luxbar-hamburger span::after {
+background-color: #EEEFD2 !important;
 }
 .footer {
   background: #212121;
