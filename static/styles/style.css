@@ -165,6 +165,9 @@ grid-auto-rows: 10vh;
 }
 
 @media screen and (max-width:420px) {
+main {
+padding:10px
+}
 .month{
 font-size:20px}
 .calendar__week {
