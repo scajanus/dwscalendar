@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DWS Calendar</title>
+  </head>
+  <body class="Site noSelect">
+    {% include 'header.html' %}
+    <main class="Site-content">
+      <h2>The fuck is deep water soloing, anyway?</h2>
+      <i>Deep-water soloing (DWS), also known as psicobloc, is a form of solo rock climbing that relies solely upon the presence of water at the base of a climb to protect against injury from falls from the generally high-difficulty routes.</i>
+
+      <br>
+        <a href="https://en.wikipedia.org/wiki/Deep-water_soloing">- Wikipedia, 2018</a>
+
+      <br>
+      <br>
+
+    </main>
+    {% include 'footer.html' %}
+  </body>
+</html>

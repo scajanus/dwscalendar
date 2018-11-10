@@ -51,6 +51,14 @@ def query_db(query, args=()):
 def hello(name=None):
     return render_template('hello.html', name=name,)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/wtf')
+def wtf():
+    return render_template('wtf.html')
+
 @app.route('/')
 def dwscalendar():
     today = datetime.now()
