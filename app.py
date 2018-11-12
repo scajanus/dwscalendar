@@ -108,13 +108,17 @@ SELECT * FROM tide WHERE date > date(?) AND date < date(?)
                     )
                 ],
             layout=dict(
-                margin=dict(l=30,r=10,b=30,t=20),
-                xaxis=dict(tickformat='%H:%M',
+                margin=dict(l=47,r=10,b=43,t=20),
+                xaxis=dict(title='Time',
+                    tickformat='%H:%M',
+                    ticks='outside',
                     fixedrange=True,
                     gridcolor='#644536',
                     gridwidth=1,
                     ),
-                yaxis=dict(fixedrange=True,
+                yaxis=dict(title='Height (m)',
+                    ticks='outside',
+                    fixedrange=True,
                     gridcolor='#644536'
                     ),
                 paper_bgcolor= 'rgba(235,236,239,0)',
