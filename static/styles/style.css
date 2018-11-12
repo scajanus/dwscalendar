@@ -28,7 +28,7 @@ main {
   flex-direction:column;
 }
 header {
-  font-family: 'itc-grouch', serif;
+  font-family: 'itc_grouch', serif;
 }
 body {
   font-family: Courier, Lato, Helvetica, Arial, sans-serif;
