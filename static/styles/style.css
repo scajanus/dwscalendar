@@ -100,6 +100,12 @@ h1 {margin: 5px}
 .calendar__day {
   text-align: center;
 }
+.calendar_link {
+  display: inline-block;
+  margin: 5px;
+  border-radius: 6%;
+  transition: background-color 0.4s ease;
+}
 
 .tide {
   text-align: center;
@@ -125,10 +131,9 @@ h1 {margin: 5px}
   text-align: center;
   background: inherit;
   display:inline-block;
-  transition: background-color 0.9s ease;
 }
-.circle:hover {
-  background-color: #C6A35B;
+.calendar_link:hover  {
+  background-color: #DBB985;
 }
 
 .today {
@@ -190,7 +195,7 @@ padding:10px
 .month{
 font-size:20px}
 .calendar__week {
-  grid-auto-rows: minmax(80px, 13vh);
+  grid-auto-rows: minmax(80px, 10vh);
 }
 }
 
