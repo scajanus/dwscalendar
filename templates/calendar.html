@@ -10,37 +10,41 @@
   <body class="Site noSelect">
     {% include 'header.html' %}
     <main class="Site-content">
-      <div class="month">
-        <div class="prev"><a href="/?delta=-1&year={{year}}&month={{month}}&style=style" title="Older" rel="nofollow">&larr;</a></div>
-        <div>
-          <div> <a href="/" title="Today" rel="nofollow">{{month_name}}</a> </div>
-          <div> <span style="font-size:13px">{{year}}</span> </div>
-        </div>
-        <div class="next"><a href="/?delta=1&year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&rarr;</a></div>
-      </div>
-
-      <div class="calendar">
-        <div class="calendar__header">
-          <div>mon</div> <div>tue</div> <div>wed</div> <div>thu</div> <div>fri</div> <div>sat</div> <div>sun</div>
-        </div>
-        {% for row in cal %}
-        <div class="calendar__week">
-          {% for date, type in row %}
-          {% if date != 0 %}
-          <a href="/plot?year={{year}}&month={{month}}&date={{date}}" class="calendar_link">
-            <div class="calendar__day">
-              <div class="circle day">{{date if date != 0 else '&nbsp;'|safe}}</div>
-              <div class="tide">{{type|safe}}</div>
+      <div class="calendar-parent">
+        <div class="calendar">
+          <div class="month">
+            <div class="prev"><a href="/?delta=-1&year={{year}}&month={{month}}&style=style" title="Older" rel="nofollow">&larr;</a></div>
+            <div>
+              <div> <a href="/" title="Today" rel="nofollow">{{month_name}}</a> </div>
+              <div> <span style="font-size:13px">{{year}}</span> </div>
             </div>
-          </a>
-          {% else %}
-          <div class="calendar__day">
-            <div>&nbsp;</div>
+            <div class="next"><a href="/?delta=1&year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&rarr;</a></div>
           </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-      {% endfor %}
+
+          <div class="calendar-grid">
+            <div class="calendar__header">
+              <div>mon</div> <div>tue</div> <div>wed</div> <div>thu</div> <div>fri</div> <div>sat</div> <div>sun</div>
+            </div>
+            {% for row in cal %}
+            <div class="calendar__week">
+              {% for date, type in row %}
+              {% if date != 0 %}
+              <a href="/plot?year={{year}}&month={{month}}&date={{date}}" class="calendar_link">
+                <div class="calendar__day">
+                  <div class="circle day">{{date if date != 0 else '&nbsp;'|safe}}</div>
+                  <div class="tide">{{type|safe}}</div>
+                </div>
+              </a>
+              {% else %}
+              <div class="calendar__day">
+                <div>&nbsp;</div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
       <div class="instructions">
         <b>Click on the day to see the tides</b>

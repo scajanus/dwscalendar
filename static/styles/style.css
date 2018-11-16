@@ -69,7 +69,7 @@ h1 {margin: 5px}
  flex-shrink: 10;
 }
 /* CALENDAR ITEMS, LAYOUT */
-.calendar{}
+.calendar-grid{}
 .calendar__week,
 .calendar__header {
   display: grid;
@@ -90,7 +90,7 @@ h1 {margin: 5px}
 }
 
 /* CALENDAR ITEMS, STYLING */
-.calendar {
+.calendar-grid {
 }
 .calendar__header > div {
   font-size: 0.8em;
@@ -139,44 +139,17 @@ h1 {margin: 5px}
 .today {
   background: #49393B;
 }
-
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:1024px) {
-h1 {
-  margin: 5px;
-  font-size: 16px;
-}
-body {
-  font-size: 16px;
-}
+@media screen and (max-width:900px) {
 .calendar__week {
-  font-size: 1.3em;
-  grid-auto-rows: 15fr;
+  grid-auto-rows: 90px;
+  text-align: right;
 }
-.calendar__header {
-font-size: .9em;
-grid-auto-rows: 5vh;
-}
-.calendar {
-  font-size: 1.3em;
-}
-.month .prev { font-size: 24px }
-.month .next { font-size: 24px }
-}
-@media screen and (max-width:1024px) and (orientation:landscape){
-.calendar__week {
-  font-size: 1.3em;
-  grid-auto-rows: 17vh;
-}
-.calendar__header {
-font-size: .9em;
-grid-auto-rows: 10vh;
-}
-.tide {
+.calendar__day {
   font-size: 15px;
+  padding: 1vh;
 }
 }
+
 @media screen and (max-width:768px) {
 .calendar__week {
   grid-auto-rows: 90px;
@@ -207,6 +180,10 @@ font-size:20px}
 
 .Site-content {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .luxbar-header {
   color: #EEEFD2;
@@ -238,4 +215,19 @@ background-color: #EEEFD2 !important;
 }
 .instructions {
   font-size: 12px;
+  width: 350px;
+  #background:#ee4545;
+}
+.calendar {
+  display:flex;
+  flex-direction: column;
+  max-width:800px;
+  #background:#aaaaaa;
+}
+.calendar-parent {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  #background:#45aa45;
+  flex-grow:1;
 }
