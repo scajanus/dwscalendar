@@ -140,6 +140,9 @@ h1 {margin: 5px}
   background: #49393B;
 }
 @media screen and (max-width:900px) {
+body {
+  font-size: 16px;
+}
 .calendar__week {
   grid-auto-rows: 90px;
   text-align: right;
