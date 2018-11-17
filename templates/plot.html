@@ -1,32 +1,37 @@
 <!doctype html>
 <html>
 
-<head>
+  <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
     <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
-</head>
+  </head>
 
-<body class="Site noSelect">
-  {% include 'header.html' %}
-  <main class="Site-content">
-        <div> <span style="font-size:20px">
-    <a href="/?year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&larr; {{date}}</a>
-            </span> </div>
-      <br>
-    <div id="{{date}}"></div>
-    <br>
-    For most crags, tides above 2 meters is enough.
-    <div>
-      <b>x Check the guidebook for details x</b>
-    </div>
-  </main>
-  {% include 'footer.html' %}
-</body>
+  <body class="Site noSelect">
+    {% include 'header.html' %}
+    <main class="Site-content">
+      <div style="flex-grow:1; flex-basis:500px;">
+        <div>
+        <span style="font-size:20px">
+          <a href="/?year={{year}}&month={{month}}&style=style" title="Newer" rel="nofollow">&larr; {{date}}</a>
+        </span>
+        </div>
+        <br>
+        <div id="{{date}}"></div>
+        <br>
+      </div>
+      <div>
+          For most crags, tides above 2 meters is enough.<br>
+          <b>x Check the guidebook for details x</b>
+        </div>
+
+    </main>
+    {% include 'footer.html' %}
+  </body>
 
 
-<footer>
+  <footer>
     <!-- D3.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <!-- jQuery -->
@@ -37,14 +42,14 @@
 
     <script type="text/javascript">
 
-        var graphs = {{graphJSON | safe}};
+      var graphs = {{graphJSON | safe}};
 
-        Plotly.plot("{{date}}", // the ID of the div, created above
-                    graphs.data,
-                    graphs.layout,
-                    graphs.config);
+Plotly.plot("{{date}}", // the ID of the div, created above
+  graphs.data,
+  graphs.layout,
+  graphs.config);
 
     </script>
-</footer>
+  </footer>
 
 </html>
