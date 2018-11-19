@@ -87,6 +87,7 @@ h1 {margin: 5px}
 
 .calendar__day {
   padding: 16px;
+  width: 3em;
 }
 
 /* CALENDAR ITEMS, STYLING */
@@ -150,6 +151,7 @@ body {
 .calendar__day {
   font-size: 15px;
   padding: 1vh;
+  width: 4em;
 }
 }
 
@@ -161,6 +163,7 @@ body {
 .calendar__day {
   font-size: 15px;
   padding: 5px;
+  width: unset;
 }
 }
 
