@@ -67,12 +67,12 @@ def dwscalendar():
     if delta == -1:
         year=year if month>1 else year-1
         month=month-1 if month>1 else 12
-        d = datetime(year, month, date)
+        d = datetime(year, month, 1)
         return redirect(url_for('dwscalendar', year=d.year, month=d.month, date=d.day))
     elif delta == 1:
         year=year if month<12 else year+1
         month=month+1 if month<12 else 1
-        d = datetime(year, month, date)
+        d = datetime(year, month, 1)
         return redirect(url_for('dwscalendar', year=d.year, month=d.month, date=d.day))
     cal = myDWSCalendar.dwsdayscalendar(year, month)
     return render_template('calendar.html',
