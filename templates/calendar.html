@@ -33,12 +33,10 @@
               {% for date, type in row %}
               {% if date != 0 %}
               <a href="/plot?year={{year}}&month={{month}}&date={{date}}" class="calendar_link">
-                    <div class="ct-chart{{year}}-{{month}}-{{date}} ct-perfect-fourth"></div>
+                    <div class="ct-chart my-chart ct-chart{{year}}-{{month}}-{{date}}"></div>
               </a>
     <script>
 var options = {
-  width: 90,
-  height: 120,
   high: 3.5,
   low: 0,
   showArea: true,
@@ -47,7 +45,8 @@ var options = {
   fullWidth: true,
   axisX: {
     showLabel: false,
-    showGrid: false
+    showGrid: false,
+    offset: 0
   },
   axisY: {
     onlyInteger: true,
