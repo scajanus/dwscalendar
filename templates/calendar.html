@@ -4,6 +4,9 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
     <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DWS Calendar</title>
   </head>
@@ -30,11 +33,49 @@
               {% for date, type in row %}
               {% if date != 0 %}
               <a href="/plot?year={{year}}&month={{month}}&date={{date}}" class="calendar_link">
-                <div class="calendar__day">
-                  <div class="circle day">{{date if date != 0 else '&nbsp;'|safe}}</div>
-                  <div class="tide">{{type|safe}}</div>
-                </div>
+                    <div class="ct-chart{{year}}-{{month}}-{{date}} ct-perfect-fourth"></div>
               </a>
+    <script>
+var options = {
+  width: 90,
+  height: 120,
+  high: 3.5,
+  low: 0,
+  showArea: true,
+  showLine: false,
+  showPoint: false,
+  fullWidth: true,
+  axisX: {
+    showLabel: false,
+    showGrid: false
+  },
+  axisY: {
+    onlyInteger: true,
+    offset: 15
+  }
+};
+var getData = $.get('/data', {year:{{year}}, month:{{month}}, date:{{date}} });
+
+getData.done(function(results) {
+    var data = {
+        // A labels array that can contain any sort of values
+        labels: [
+            results.labels
+        ],
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+            results.series
+        ]
+    };
+
+    // Create a new line chart object where as first parameter we pass in a selector
+    // that is resolving to our chart container element. The Second parameter
+    // is the actual data object.
+    new Chartist.Line('.ct-chart{{year}}-{{month}}-{{date}}', data, options);
+
+});
+
+</script>
               {% else %}
               <div class="calendar__day">
                 <div>&nbsp;</div>
