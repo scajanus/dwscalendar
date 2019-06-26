@@ -33,7 +33,9 @@
               {% for date, type in row %}
               {% if date != 0 %}
               <a href="/plot?year={{year}}&month={{month}}&date={{date}}" class="calendar_link">
-                    <div class="ct-chart my-chart ct-chart{{year}}-{{month}}-{{date}}"></div>
+                <div class="ct-chart my-chart ct-chart{{year}}-{{month}}-{{date}}">
+                <span class='date'>{{date}}</span>
+                </div>
               </a>
     <script>
 var options = {

@@ -244,3 +244,10 @@ background-color: #EEEFD2 !important;
   height: 100%;
   min-height: 100%;
 }
+.date {
+    margin: 15px;
+    display:center;
+    position:absolute;
+    opacity: 0.3;
+    z-index: 1;
+}
