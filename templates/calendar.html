@@ -49,8 +49,10 @@ var options = {
     offset: 0
   },
   axisY: {
+    showLabel: false,
     onlyInteger: true,
-    offset: 15
+    offset: 0,
+    scaleMinSpace: 25
   }
 };
 var getData = $.get('/data', {year:{{year}}, month:{{month}}, date:{{date}} });

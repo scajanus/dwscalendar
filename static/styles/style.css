@@ -103,7 +103,7 @@ h1 {margin: 5px}
 }
 .calendar_link {
   display: inline-block;
-  margin: 5px;
+  margin: 0px;
   border-radius: 6%;
   transition: background-color 0.4s ease;
 }
