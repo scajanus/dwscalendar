@@ -237,3 +237,6 @@ background-color: #EEEFD2 !important;
   #background:#45aa45;
   flex-grow:1;
 }
+.ct-series-a .ct-area {
+  fill:#0044FF !important;
+}
