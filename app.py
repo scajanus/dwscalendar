@@ -91,7 +91,7 @@ def data():
         return redirect(url_for('plot', year=d.year, month=d.month, date=d.day))
     d = datetime(year, month, date)
     query = """
-SELECT * FROM tide WHERE date > date(?) AND date < date(?)
+SELECT * FROM tide WHERE date >= date(?) AND date <= datetime(?)
 ORDER BY date
 """
     data = query_db(query, [d, (d+timedelta(1))])
