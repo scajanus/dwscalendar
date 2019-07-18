@@ -59,6 +59,10 @@ def about():
 def wtf():
     return render_template('wtf.html')
 
+@app.route('/lynn-vietnam')
+def lynn():
+    return render_template('lynn.html')
+
 @app.route('/')
 def dwscalendar():
     today = datetime.now()

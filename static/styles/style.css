@@ -250,4 +250,9 @@ background-color: #EEEFD2 !important;
     position:absolute;
     opacity: 0.3;
     z-index: 1;
+.report-div {
+  background:#F1E0C5;
+  line-height: 1.2em;
+  padding: 20px;
+  text-align: justify;
 }
