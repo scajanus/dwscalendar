@@ -79,7 +79,8 @@ def dwscalendar():
             cal=cal,
             year=year,
             month=month,
-            month_name=calendar.month_name[month])
+            month_name=calendar.month_name[month],
+            monthrange=calendar.monthrange(year, month))
 
 
 @app.route('/data')
