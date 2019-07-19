@@ -22,7 +22,7 @@
 main {
   margin-top: 60px;
   padding: 30px;
-  color: #FFFFFF;
+  color: #644536;
   background-color: inherit;
   display: flex;
   flex-direction:column;
@@ -31,9 +31,9 @@ header {
   font-family: 'itc_grouch', serif;
 }
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Courier, Lato, Helvetica, Arial, sans-serif;
   font-size: 20px;
-  background-color: #FF727A;
+  background-color: #E2C391;
   margin: 0;
   padding: 0;
 }
@@ -46,9 +46,8 @@ h1 {margin: 5px}
 
 /* Top bar with arrows and month */
 .month {
-    color: #FFF;
-    font-family: 'itc_grouch';
-    font-size: 3.1em;
+    color: #644536;
+    font-size: 1.1em;
     font-weight: 500;
     letter-spacing: 3px;
     text-align: center;
@@ -58,7 +57,6 @@ h1 {margin: 5px}
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    opacity: 0.3;
 }
 
 .month .prev {
@@ -96,9 +94,9 @@ h1 {margin: 5px}
 .calendar-grid {
 }
 .calendar__header > div {
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-weight: bold;
-  color: #80FF72;
+  color: #1E1E24;
 }
 .calendar__day {
   text-align: center;
@@ -107,7 +105,7 @@ h1 {margin: 5px}
   display: inline-block;
   margin: 0px;
   border-radius: 6%;
-  transition: opacity 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 .tide {
@@ -136,7 +134,7 @@ h1 {margin: 5px}
   display:inline-block;
 }
 .calendar_link:hover  {
-  opacity: 1.0
+  background-color: #DBB985;
 }
 
 .today {
@@ -194,33 +192,23 @@ font-size:20px}
   justify-content: space-between;
 }
 .luxbar-header {
-  color: #212121;
-  opacity: 0.8;
+  color: #EEEFD2;
 }
 .luxbar-item {
-  color: #212121;
-  opacity: 0.8;
+  color: #EEEFD2;
 }
 .luxbar-hamburger span {
-background-color: #212121 !important;
+background-color: #EEEFD2 !important;
 }
 .luxbar-hamburger span::before {
-background-color: #212121 !important;
+background-color: #EEEFD2 !important;
 }
 .luxbar-hamburger span::after {
-background-color: #212121 !important;
-}
-.luxbar-fixed {
-  box-shadow: none !important;
-}
-.luxbar-menu {
-  background: #FFF07C !important;
-  color: #212121;
-  box-shadow: none !important;
+background-color: #EEEFD2 !important;
 }
 .footer {
-  background: #FFF07C;
-  color: #212121;
+  background: #212121;
+  color: #EEEFD2;
   font-size: 12px;
 }
 .footnote {
@@ -232,10 +220,9 @@ background-color: #212121 !important;
   margin: 5px;
 }
 .instructions {
-  padding: 12px;
   font-size: 12px;
   width: 350px;
-  opacity:0.6;
+  #background:#ee4545;
 }
 .calendar {
   display:flex;
@@ -251,22 +238,7 @@ background-color: #212121 !important;
   flex-grow:1;
 }
 .ct-series-a .ct-area {
-  fill:#7EE8FA !important;
-  fill-opacity: 0.6;
-  opacity 1;
-  transition: fill-opacity 0.6s ease;
-}
-.ct-series-a .ct-area:hover {
-  fill:#7EE8FF !important;
-  fill-opacity: 0.75;
-}
-.ct-grid {
-  stroke: #FFFFFF !important;
-  opacity:0.6;
-}
-.ct-labels span {
-  color: #FFFFFF !important;
-  opacity:0.6;
+  fill:#0044FF !important;
 }
 .my-chart {
   height: 100%;

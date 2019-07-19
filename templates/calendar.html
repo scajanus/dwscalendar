@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/' + request.args.get('style', 'style') + '.css') }}">
     <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/swipe.js') }}"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
