@@ -26,4 +26,5 @@ htmlcov/
 *,cover
 
 dws/
-static/
+*.woff
+*.woff2
